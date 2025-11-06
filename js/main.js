@@ -87,11 +87,25 @@ const API_KEY = "lKBuCFZji1BrCnFWZCJqoLNTnIgvyuGk";
 
         function handleHomeClick(event) {
             searchInput.value = '';
+            searchSection.innerHTML = '<form id="searchForm">'+
+                '<div>'+
+                   '<label for="q">Search Gifs:</label>'+
+                    '<input type="text" id="q" placeholder="Enter search phrase" required>'+
+                    '<button type="submit" onClick="queryGiphy()">Search</button>'+
+                '</div>'+
+           '</form>';
             outputArea.innerHTML = '';
         }
 
         function handleRandomClick(event) {
            // event.preventDefault();
+           searchSection.innerHTML = '<form id="searchForm">'+
+                '<div>'+
+                   '<label for="q">Search Gifs:</label>'+
+                    '<input type="text" id="q" placeholder="Enter search phrase" required>'+
+                    '<button type="submit" onClick="queryGiphy()">Search</button>'+
+                '</div>'+
+           '</form>';
             queryGiphy('random'); // Calls the main function with the 'random' path
         }
 
@@ -124,7 +138,6 @@ const API_KEY = "lKBuCFZji1BrCnFWZCJqoLNTnIgvyuGk";
                 outputArea.innerHTML = '<p>Welcome! Start your Giphy search above.</p>';
             }
         };
-
 
 
 
