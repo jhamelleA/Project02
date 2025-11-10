@@ -9,7 +9,7 @@ $shadow-md: 0 2px 5px rgba(0, 0, 0, 0.05);
 
 // --- 2. Global Styles & Reset ---
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: $background-light;
@@ -159,6 +159,7 @@ footer {
 
 #contact-section {
     text-align: center;
+    font-family: 'Inter', Arial, sans-serif;
 }
 
 // --- 8. Responsive Adjustments (for smaller screens) ---
