@@ -124,9 +124,8 @@ footer {
   font-size: 0.9em;
 }
 
-.contact-section {
-  justify-content: center;
-  color: blue;
+#contact-section {
+  text-align: center;
 }
 
 @media (max-width: 320px) {
