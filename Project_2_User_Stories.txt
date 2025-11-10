@@ -1,0 +1,13 @@
+User Story 1:
+As a user, I want to give the option  to search from the random page in case the random gifs gives an idea to the user.  
+
+User Story 2: 
+As a smartphone user, I want the gif search results to show vertically with one gif per row so the mobile web page appears clear and organized.  
+
+User Story 3:
+As a desktop user, I would like to view several gif images on one page before scrolling to view additional gifs for each search.  
+
+
+
+
+
