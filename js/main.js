@@ -68,7 +68,7 @@ const API_KEY = "lKBuCFZji1BrCnFWZCJqoLNTnIgvyuGk";
                 outputArea.innerHTML = ''; 
 
                 const gifs = json.data;
-
+                console.log('gif data', json.data)
                 if (gifs.length === 0) {
                     outputArea.innerHTML = `<h2>No Gifs found for "${searchTerm}" 😢</h2>`;
                     return;
@@ -86,37 +86,85 @@ const API_KEY = "lKBuCFZji1BrCnFWZCJqoLNTnIgvyuGk";
         }
 
         function handleHomeClick(event) {
-            searchInput.value = '';
-            searchSection.innerHTML = '<form id="searchForm">'+
-                '<div>'+
-                   '<label for="q">Search Gifs:</label>'+
-                    '<input type="text" id="q" placeholder="Enter search phrase" required>'+
-                    '<button type="submit" onClick="queryGiphy()">Search</button>'+
-                '</div>'+
-           '</form>';
+           searchInput.value = '';
+           searchSection.style.display = 'block';
             outputArea.innerHTML = '';
         }
 
         function handleRandomClick(event) {
-           // event.preventDefault();
-           searchSection.innerHTML = '<form id="searchForm">'+
-                '<div>'+
-                   '<label for="q">Search Gifs:</label>'+
-                    '<input type="text" id="q" placeholder="Enter search phrase" required>'+
-                    '<button type="submit" onClick="queryGiphy()">Search</button>'+
-                '</div>'+
-           '</form>';
+            searchSection.style.display = 'block';
+           searchInput.value = '';
             queryGiphy('random'); // Calls the main function with the 'random' path
         }
 
-        function handleContactClick(event) {
-            searchSection.innerHTML = '';
-
-           outputArea.innerHTML = '<section id="search-section"<form id="searchForm"><div><label for="q">Search Gifs:</label>'+
-           '<input type="text" id="q" placeholder="Enter search phrase" required><button type="submit" onClick="queryGiphy()">Search</button>'+
-                '</div></form></section>';
+        
+        function handleSearchSection(page)
+        {
+            if(page === 'contact')
+            {
+                searchSection.innerHTML='';
+            }
         }
 
+        function handleContactClick(event) {
+            if (event) {
+                event.preventDefault(); // Stop the link from changing the URL
+             }
+
+            const mainContentArea = document.querySelector('main');
+            if (!mainContentArea) {
+                console.error("Could not find the main content area.");
+                return;
+             }
+             
+         
+             // Or 'flex', 'grid', etc., depending on desired layout
+        
+            searchSection.style.display = 'none';
+
+                outputArea.innerHTML = `
+        <h2>Get in Touch</h2>
+        <p>Have questions, feedback, or suggestions? Fill out the form below and we'll get back to you as soon as possible.</p>
+
+        <form action="#" method="POST" id="contactForm">
+            
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div>
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            
+            <div>
+                <button type="submit">Send Message</button>
+            </div>
+
+        </form>
+    `;
+
+    // Optional: Add a listener for form submission (since the form is created dynamically)
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("Thank you for your message! (Form submission logic would go here)");
+            contactForm.reset();
+        });
+    }
+}
 
         // Event listener for form submission
         searchForm.addEventListener('submit', (event) => {
@@ -124,7 +172,7 @@ const API_KEY = "lKBuCFZji1BrCnFWZCJqoLNTnIgvyuGk";
             event.preventDefault(); 
             
             const searchTerm = searchInput.value.trim();
-
+            console.log('searchterm', searchTerm);
             if (searchTerm) {
                 queryGiphy(searchTerm);
             } else {
