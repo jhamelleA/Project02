@@ -117,40 +117,40 @@ const API_KEY = "lKBuCFZji1BrCnFWZCJqoLNTnIgvyuGk";
                 return;
              }
              
-         
+            
              // Or 'flex', 'grid', etc., depending on desired layout
-        
+    
             searchSection.style.display = 'none';
 
                 outputArea.innerHTML = `
-        <h2>Get in Touch</h2>
-        <p>Have questions, feedback, or suggestions? Fill out the form below and we'll get back to you as soon as possible.</p>
-
-        <form action="#" method="POST" id="contactForm">
+        <h2 class="contactForm">Contact Form</h2>
+        
+        <form action="#" method="POST" class="contactForm">
             
-            <div>
+            <div class="formItems">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
             </div>
             
-            <div>
+            <div class="formItems">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
             </div>
             
-            <div>
+            <div class="formItems">
                 <label for="subject">Subject:</label>
                 <input type="text" id="subject" name="subject" required>
             </div>
             
-            <div>
+            <div class="formItems">
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="6" required></textarea>
             </div>
             
-            <div>
+            <div class="formItems">
                 <button type="submit">Send Message</button>
             </div>
+              <p class="contactForm">Have questions, feedback, or suggestions? Fill out the form below and we'll get back to you as soon as possible.</p>
 
         </form>
     `;

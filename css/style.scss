@@ -111,7 +111,7 @@ main {
 
 // --- 6. GIF Output Area (The Grid) ---
 .gif-container {
-    display: grid;
+    //display: grid;
     // Using auto-fit for responsive grid columns
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -146,6 +146,16 @@ main {
     }
 }
 
+.contactForm {
+    text-align: center;
+    font-family: 'Inter', Arial, sans-serif;
+    color: black;
+}
+
+.formItems {
+    margin-bottom: 8px;
+}
+
 // --- 7. Footer ---
 footer {
     text-align: center;
@@ -155,11 +165,6 @@ footer {
     background-color: lighten($background-light, 3%);
     color: #555;
     font-size: 0.9em;
-}
-
-#contact-section {
-    text-align: center;
-    font-family: 'Inter', Arial, sans-serif;
 }
 
 // --- 8. Responsive Adjustments (for smaller screens) ---
